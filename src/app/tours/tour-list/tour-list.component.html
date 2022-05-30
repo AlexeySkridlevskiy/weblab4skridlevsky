@@ -1,0 +1,14 @@
+
+<div *ngIf="selectedTour" class="px-5 py-3">
+    <h5>Tour destination: {{selectedTour.destination | uppercase}}</h5>
+    <div class="py-3 px-2">
+      <p>Tour type: {{selectedTour.type}}</p>
+    </div>
+  </div>
+  <div>
+      <ul class="tours list-group">
+        <li *ngFor="let tour of tours">
+          <button type="button" (click)="onSelect(tour)" class="mx-5 my-2">{{ tour.id }} {{ tour.destination }}</button>
+        </li>
+      </ul>
+  </div>
